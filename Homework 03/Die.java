@@ -25,14 +25,7 @@
  *
  *  Warnings      :  None
  *  Exceptions    :  IllegalArgumentException when the number of sides or pips is out of range
- * ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
- *  Revision Histor
- *  ---------------
- *            Rev      Date     Modified by:  Reason for change/modification
- *           -----  ----------  ------------  -----------------------------------------------------------
- *  @version 1.0.0  2017-02-06  B.J. Johnson  Initial writing and release
- *  @version 1.1.0  2017-02-17  B.J. Johnson  Filled in method code
- * ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+ * ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 //import java.lang.Math.random;
 //import java.util.Scanner;
 public class Die {
