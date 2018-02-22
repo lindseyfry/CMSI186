@@ -118,9 +118,7 @@ public class DiceSet {
      if(ds1.count== ds.count){
        if(ds1.sides == ds.sides){
          if(ds1.sum() == ds.sum()){
-           if(ds.toString() == ds1.toString()){
              return true;
-           }
          }
        }
      }
