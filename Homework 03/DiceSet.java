@@ -20,7 +20,7 @@
  *                   things about Java, and to add this header block and some JavaDoc comments.
  *  Warnings      :  None
  *  Exceptions    :  IllegalArgumentException when the number of sides or pips is out of range
- * ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ * ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
 public class DiceSet {
 
