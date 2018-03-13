@@ -65,25 +65,6 @@ public class ClockSolver {
         }
     }
 
-        //
-        // try{
-        //   angle = clock.validateAngleArg( args[0] );
-        // }catch (Exception e){
-        //   System.out.println("Argument must be between 0 and 360.");
-        // }
-        //
-        // try{
-        //   timeSlice = clock.validateAngleArg( args[1] );
-        // }catch (Exception e){
-        //   timeSlice = clock.validateAngleArg("Argument must be between 0 and 180");
-        // }timeSlice = 60.0;
-        //
-        // if(angle > 180){
-        //   angle = angle - 180;
-        // }
-        // else{
-        //   angle = angle;
-        // }
     public static void main( String args[] ) {
       ClockSolver cse = new ClockSolver();
       //ClockEmpty clock    = new ClockEmpty();
