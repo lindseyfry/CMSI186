@@ -1,4 +1,4 @@
-/** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ /** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
  *  File name     :  Clock.java
  *  Purpose       :  Provides a class defining methods for the ClockSolver class
  *  @author       :  Lindsey Fry
@@ -33,7 +33,7 @@ public class Clock {
    private double currentDegrees;
    private double defaultDegrees;
    //private String time;
-   private double timeSlice;
+   private double timeSlice = 0;
    // private double angle;
    private int hour = 0;
    private int minute = 0;
@@ -52,12 +52,14 @@ public class Clock {
    public Clock(double angle, double timeSlice) {
      defaultDegrees = angle;
      currentDegrees = angle;
-     this.timeSlice = timeSlice;
+     timeSlice = DEFAULT_TIME_SLICE_IN_SECONDS;
+    this.timeSlice = timeSlice;
      if(angle > MAXIMUM_DEGREE_VALUE || angle < 0){
        System.exit((int)INVALID_ARGUMENT_VALUE);
      }
      if(timeSlice <= 0 || timeSlice > 1800.0){
-       timeSlice = 60.0;
+       System.out.println("Invalid Time Slice Value. Please enter a number between 0 and 1800.");
+       System.exit((int)INVALID_ARGUMENT_VALUE);
      }
 
    }
@@ -125,8 +127,8 @@ public class Clock {
    public double getHandAngle() {
      middleAngle = Math.abs(getHourHandAngle() - getMinuteHandAngle())% 360;
      if(middleAngle > 180){
-       //middleAngle -= 180;
-       return 360 - middleAngle;
+       middleAngle -= 360;
+       //middleAngle = 360 - middleAngle;
      }
      return middleAngle;
 
