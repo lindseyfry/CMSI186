@@ -16,7 +16,7 @@
  *           -----  ----------  ------------  -----------------------------------------------------------
  *  @version 1.0.0  2017-02-28  B.J. Johnson  Initial writing and release
  * ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
-
+import java.text.DecimalFormat;
 public class Clock {
   /**
    *  Class field definintions go here
@@ -71,10 +71,14 @@ public class Clock {
    public double tick() {
      totalSeconds += timeSlice;
      updateDegrees();
-
-     hour = (int)(totalSeconds/SECONDS_IN_AN_HOUR);
-     minute = (int)(totalSeconds/SECONDS_IN_A_MINUTE);
-     second = (int)(totalSeconds % 60);
+     hour = (int)Math.floor(totalSeconds / 3600);
+     minute = (int)Math.floor((totalSeconds % 3600) /60);
+     second = (int)totalSeconds - ((minute * 60) + (hour * 3600));
+     // hour = (int)(totalSeconds/SECONDS_IN_AN_HOUR);
+     // minute = (int)((totalSeconds - hour)/SECONDS_IN_A_MINUTE);
+     // //minute = (int)((totalSeconds/SECONDS_IN_AN_HOUR)/SECONDS_IN_A_MINUTE);
+     // //second = (int)(totalSeconds % 60);
+     // second = (int)(((totalSeconds/SECONDS_IN_AN_HOUR)/SECONDS_IN_A_MINUTE)%60);
      return totalSeconds;
    }
 
@@ -94,7 +98,7 @@ public class Clock {
    */
    public double getHourHandAngle() {
       //hour = Math.floor(totalSeconds/3600); //total HOURS
-      angleHour = totalSeconds * HOUR_HAND_DEGREES_PER_SECOND;
+      angleHour = (totalSeconds * HOUR_HAND_DEGREES_PER_SECOND);
       while(angleHour > MAXIMUM_DEGREE_VALUE){
         angleHour -= MAXIMUM_DEGREE_VALUE;
       }
@@ -107,7 +111,7 @@ public class Clock {
    */
    public double getMinuteHandAngle() {
     //minute = totalSeconds % 3600;
-    angleMinute = totalSeconds * MINUTE_HAND_DEGREES_PER_SECOND;
+    angleMinute = (totalSeconds * MINUTE_HAND_DEGREES_PER_SECOND);
     while(angleMinute > MAXIMUM_DEGREE_VALUE){
       angleMinute -= MAXIMUM_DEGREE_VALUE;
     }
@@ -119,9 +123,10 @@ public class Clock {
    *  @return double-precision value of the angle between the two hands
    */
    public double getHandAngle() {
-     middleAngle = Math.abs(getHourHandAngle() - getMinuteHandAngle());
+     middleAngle = Math.abs(getHourHandAngle() - getMinuteHandAngle())% 360;
      if(middleAngle > 180){
-       middleAngle -= 180;
+       //middleAngle -= 180;
+       return 360 - middleAngle;
      }
      return middleAngle;
 
@@ -146,7 +151,13 @@ public class Clock {
    *  @return String value of the current clock
    */
    public String toString() {
-      String time = hour + ":" + minute + ":" + second;
+
+      String hourMinute = "00";
+      String secondString = "00.0";
+      DecimalFormat hourMinuteFormat = new DecimalFormat(hourMinute);
+      DecimalFormat secondStringFormat = new DecimalFormat(secondString);
+
+      String time = hourMinuteFormat.format(hour) + ":" + hourMinuteFormat.format(minute) + ":" + secondStringFormat.format(second);
       return time;
    }
 
