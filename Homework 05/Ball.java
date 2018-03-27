@@ -100,42 +100,8 @@
 
      System.out.println( "TESTING newBallPos()" );
 
-     System.out.println( "TESTING newBallPos()" );
-
-      System.out.println( "\n" + tab + "time slice = 1s" );
-      for ( int i = 0; i < 10; i++ ) {
-        try { System.out.println( tab + tab + b.toString() ); }
-        catch (Exception e) { System.out.println( e ); }
-        b.newBallPos();
-      }
-
-      System.out.println( "\n" + tab + "time slice = 10s" );
       b.timeSlice = 10;
 
-      for ( int i = 0; i < 10; i++ ) {
-        try { System.out.println( tab + tab + b.toString() ); }
-        catch (Exception e) { System.out.println( e ); }
-        b.newBallPos();
-      }
-
-      System.out.println( "\n" + tab + "time slice = 15s" );
-      b.timeSlice = 15;
-      for ( int i = 0; i < 10; i++ ) {
-        try { System.out.println( tab + tab + b.toString() ); }
-        catch (Exception e) { System.out.println( e ); }
-        b.newBallPos();
-      }
-
-      System.out.println( "\n" + tab + "time slice = 2.34s" );
-      b.timeSlice = 2.34;
-      for ( int i = 0; i < 10; i++ ) {
-        try { System.out.println( tab + tab + b.toString() ); }
-        catch (Exception e) { System.out.println( e ); }
-        b.newBallPos();
-      }
-
-      System.out.println( "\n" + tab + "time slice = 0.03s" );
-      b.timeSlice = 0.03;
       for ( int i = 0; i < 10; i++ ) {
         try { System.out.println( tab + tab + b.toString() ); }
         catch (Exception e) { System.out.println( e ); }
@@ -145,24 +111,7 @@
       //TEST getXPosition()
       System.out.println( "\nTESTING getXPosition()" );
 
-      System.out.println( "\n" + tab + "Ball with start position: <0 , 0> start speed <10 , 10> time slice: 1s" );
-      b = new Ball( 0 , 0 , 10 , 10 , 1 );
-      for ( int i = 0; i < 5; i++ ) {
-        try { System.out.println( tab + tab + "x-position: " + b.getXPosition() ); }
-        catch (Exception e) { System.out.println( e ); }
-        b.newBallPos();
-      }
-
-      System.out.println( "\n" + tab + "Ball with start position: <40 , 40> start speed <-10 , -10> time slice: 1s" );
       b = new Ball( 40 , 40 , -10 , -10 , 1 );
-      for ( int i = 0; i < 5; i++ ) {
-        try { System.out.println( tab + tab + "x-position: " + b.getXPosition() ); }
-        catch (Exception e) { System.out.println( e ); }
-        b.newBallPos();
-      }
-
-      System.out.println( "\n" + tab + "Ball with start position: <5 , 15> start speed <11 , 12> time slice: 10s" );
-      b = new Ball( 5 , 15 , 11 , 12 , 10 );
       for ( int i = 0; i < 5; i++ ) {
         try { System.out.println( tab + tab + "x-position: " + b.getXPosition() ); }
         catch (Exception e) { System.out.println( e ); }
@@ -172,7 +121,6 @@
       //TEST getYPosition()
       System.out.println( "\nTESTING getYPosition()" );
 
-      System.out.println( "\n" + tab + "Ball with start position: <0 , 0> start speed <10 , 10> time slice: 1s" );
       b = new Ball( 0 , 0 , 10 , 10 , 1 );
       for ( int i = 0; i < 5; i++ ) {
         try { System.out.println( tab + tab + "y-position: " + b.getYPosition() ); }
@@ -180,26 +128,9 @@
         b.newBallPos();
       }
 
-      System.out.println( "\n" + tab + "Ball with start position: <40 , 40> start speed <-10 , -10> time slice: 1s" );
-      b = new Ball( 40 , 40 , -10 , -10 , 1 );
-      for ( int i = 0; i < 5; i++ ) {
-        try { System.out.println( tab + tab + "y-position: " + b.getYPosition() ); }
-        catch (Exception e) { System.out.println( e ); }
-        b.newBallPos();
-      }
-
-      System.out.println( "\n" + tab + "Ball with start position: <5 , 15> start speed <11 , 12> time slice: 10s" );
-      b = new Ball( 5 , 15 , 11 , 12 , 10 );
-      for ( int i = 0; i < 5; i++ ) {
-        try { System.out.println( tab + tab + "y-position: " + b.getYPosition() ); }
-        catch (Exception e) { System.out.println( e ); }
-        b.newBallPos();
-      }
 
       //TESTING continuesToMove()
       System.out.println( "\nTESTING continuesToMove()" );
-
-      System.out.println( "\n" + tab + "Ball with start position: <5 , 15> start speed <11 , 12> time slice: 10s" );
       b = new Ball( 5 , 15 , 11 , 12 , 20 );
       for ( int i = 0; i < 40; i++ ) {
         try { System.out.println( tab + tab + "is moving: " + b.continuesToMove() + tab + b.toString() ); }
