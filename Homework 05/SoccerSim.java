@@ -45,7 +45,7 @@
      ArrayList<Ball> ballList = new ArrayList<Ball>();
 
      //initialize timer, pole and array after checking the arguments
-     if(args.length >= 4 && args.length % 4 == 0 ){
+     if(args.length % 4 == 1 && args.length >= 4){
        timer = new Timer(TIME_SLICE);
        pole = new Ball((double)Math.floor((Math.random() * X_CENTER) + 1), (double)Math.floor((Math.random() * Y_CENTER)+1), 0, 0, TIME_SLICE);
        for( int i = 0; i < args.length; i += 4){
@@ -53,35 +53,35 @@
            ball = new Ball(Double.parseDouble(args[i]), Double.parseDouble(args[i + 1]), Double.parseDouble(args[i + 2]), Double.parseDouble(args[i + 3]), TIME_SLICE);
            ballList.add(ball);
          }
-         catch(Exception e){
+         catch(NumberFormatException e){
            System.out.println("The arguments must be doubles");
            System.exit(1);
          }
         }
        }
-       else if(args.length >= 4 && args.length % 4 == 1){
+       else if(args.length % 4 == 1 && args.length >= 4){
          try{
            pole = new Ball( (double)Math.floor( ( Math.random() * X_CENTER ) + 1  ) , (double)Math.floor( ( Math.random() * Y_CENTER) + 1 ) , 0 , 0 , Double.parseDouble( args[ args.length - 1 ] ) );
          }
-         catch(Exception e){
-           System.out.println( "The arguments must be double" );
+         catch(NumberFormatException e){
+           System.out.println( "Enter doubles" );
            System.exit( 1 );
          }
          timer = new Timer(Double.parseDouble(args[args.length - 1]));
 
-         for(int j = 0; j < args.length - 1; j+=4){
+         for(int j = 0; j < args.length - 1; j += 4){
            try{
              ball = new Ball(Double.parseDouble(args[j]), Double.parseDouble(args[j + 1]), Double.parseDouble(args[j + 2]), Double.parseDouble(args[j + 3]), Double.parseDouble(args[j - 1]));
              ballList.add(ball);
            }
-           catch(Exception e){
-             System.out.println("the arguments must be doubles");
+           catch(NumberFormatException e){
+             System.out.println("Please enter a double");
              System.exit(1);
            }
           }
          }
          else{
-           System.out.println("Usage: java SoccerSim <Ball_1_X> <Ball_1_Y> <Ball_1_X_Speed> <Ball_1_Y_Speed> (continue for other balls) <Time Increment>");
+           System.out.println("Please enter Speeds and Positions for Ball X and Y and the Time increment");
            System.exit(1);
          }
 
