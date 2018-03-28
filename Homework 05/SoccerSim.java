@@ -45,23 +45,29 @@
      ArrayList<Ball> ballList = new ArrayList<Ball>();
 
      //initialize timer, pole and array after checking the arguments
-     if(args.length % 4 == 1 && args.length >= 4){
+     if(args.length % 4 == 0 && args.length >= 4){ //
+
        timer = new Timer(TIME_SLICE);
-       pole = new Ball((double)Math.floor((Math.random() * X_CENTER) + 1), (double)Math.floor((Math.random() * Y_CENTER)+1), 0, 0, TIME_SLICE);
+
+       pole = new Ball(Math.floor((Math.random() * X_CENTER) + 1), Math.floor((Math.random() * Y_CENTER)+1), 0, 0, TIME_SLICE);
+
+       //create the array of balls
        for( int i = 0; i < args.length; i += 4){
          try{
            ball = new Ball(Double.parseDouble(args[i]), Double.parseDouble(args[i + 1]), Double.parseDouble(args[i + 2]), Double.parseDouble(args[i + 3]), TIME_SLICE);
            ballList.add(ball);
          }
          catch(NumberFormatException e){
-           System.out.println("The arguments must be doubles");
+           System.out.println("The arguments must be doubles.. Please separate inputs with spaces");
            System.exit(1);
          }
         }
        }
-       else if(args.length % 4 == 1 && args.length >= 4){
+
+       //another check
+       else if((args.length - 1) % 4 == 0 && args.length >= 4){ //args.length % 4 == 0 &&
          try{
-           pole = new Ball( (double)Math.floor( ( Math.random() * X_CENTER ) + 1  ) , (double)Math.floor( ( Math.random() * Y_CENTER) + 1 ) , 0 , 0 , Double.parseDouble( args[ args.length - 1 ] ) );
+           pole = new Ball( Math.floor( ( Math.random() * X_CENTER ) + 1  ) , Math.floor( ( Math.random() * Y_CENTER) + 1 ) , 0 , 0 , Double.parseDouble( args[args.length - 1] ) );
          }
          catch(NumberFormatException e){
            System.out.println( "Enter doubles" );
@@ -69,9 +75,10 @@
          }
          timer = new Timer(Double.parseDouble(args[args.length - 1]));
 
-         for(int j = 0; j < args.length - 1; j += 4){
+         //initialize balls array
+         for(int i = 0; i < args.length - 1; i += 4){
            try{
-             ball = new Ball(Double.parseDouble(args[j]), Double.parseDouble(args[j + 1]), Double.parseDouble(args[j + 2]), Double.parseDouble(args[j + 3]), Double.parseDouble(args[j - 1]));
+             ball = new Ball(Double.parseDouble(args[i]), Double.parseDouble(args[i + 1]), Double.parseDouble(args[i + 2]), Double.parseDouble(args[i + 3]), Double.parseDouble(args[args.length - 1]));
              ballList.add(ball);
            }
            catch(NumberFormatException e){
@@ -103,7 +110,7 @@
 
          System.out.println( "\nREPORT AT " + timer.toString() );
          for ( int k = 0; k < ballList.size(); k++ ) {
-           // change print if ball is off field
+
            if ( Math.abs( ballList.get( k ).getXPosition() ) > X_CENTER || Math.abs( ballList.get( k ).getYPosition() ) > Y_CENTER ) {
              System.out.println( "   " + "Ball " + k + ": " + "   " + "   " + "   " + "<out of bounds>" );
            }
@@ -113,11 +120,11 @@
          }
 
          // check for collisions
-         for ( int l = 0; l < inBound.size()-1; l++ ) {
+         for ( int l = 0; l < inBound.size() - 1; l++ ) {
            for ( int m = l + 1; m < inBound.size(); m++ ) {
              if ( Math.sqrt( Math.pow( (inBound.get( l ).getXPosition() - inBound.get( m ).getXPosition()) , 2 ) + Math.pow( (inBound.get( l ).getYPosition() - inBound.get( m ).getYPosition()) , 2 ) ) <= DIAMETER ) {
-               String end = ( ballList.indexOf( inBound.get( m ) ) == -1 ) ? "Pole" : Integer.toString( ballList.indexOf( inBound.get( m ) ) );
-               System.out.println( "Ball collision " + ballList.indexOf( inBound.get( l ) ) + " & " + end );
+               String newEnd = ( ballList.indexOf( inBound.get( m ) ) == -1 ) ? "Pole" : Integer.toString( ballList.indexOf( inBound.get( m ) ) );
+               System.out.println( "Ball collision " + ballList.indexOf( inBound.get( l ) ) + " & " + newEnd );
                System.exit(0);
              }
            }
