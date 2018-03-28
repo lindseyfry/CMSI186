@@ -60,14 +60,6 @@
      return xPos;
    }
 
-   //This method returns the total amount of seconds
-   // public double getTotalSeconds(){
-   //   return timer.getTotalSeconds();
-   // }
-   //
-   // public String getBallAndTime(){
-   //   return timer.toString();
-   // }
 
    //This method returns if the speed of the ball is less than 1 inch per second
    public boolean continuesToMove(){
@@ -96,14 +88,13 @@
    //This is the main method used to test and run the code
    public static void main(String args[]){
      Ball b = new Ball(10, 10, 1, 1, 1);
-     String tab = "   ";
 
      System.out.println( "TESTING newBallPos()" );
 
       b.timeSlice = 10;
 
       for ( int i = 0; i < 10; i++ ) {
-        try { System.out.println( tab + tab + b.toString() ); }
+        try { System.out.println( "   " + b.toString() ); }
         catch (Exception e) { System.out.println( e ); }
         b.newBallPos();
       }
@@ -113,7 +104,7 @@
 
       b = new Ball( 40 , 40 , -10 , -10 , 1 );
       for ( int i = 0; i < 5; i++ ) {
-        try { System.out.println( tab + tab + "x-position: " + b.getXPosition() ); }
+        try { System.out.println( "   " + "x-position: " + b.getXPosition() ); }
         catch (Exception e) { System.out.println( e ); }
         b.newBallPos();
       }
@@ -123,7 +114,7 @@
 
       b = new Ball( 0 , 0 , 10 , 10 , 1 );
       for ( int i = 0; i < 5; i++ ) {
-        try { System.out.println( tab + tab + "y-position: " + b.getYPosition() ); }
+        try { System.out.println( "   " + "y-position: " + b.getYPosition() ); }
         catch (Exception e) { System.out.println( e ); }
         b.newBallPos();
       }
@@ -133,7 +124,7 @@
       System.out.println( "\nTESTING continuesToMove()" );
       b = new Ball( 5 , 15 , 11 , 12 , 20 );
       for ( int i = 0; i < 40; i++ ) {
-        try { System.out.println( tab + tab + "is moving: " + b.continuesToMove() + tab + b.toString() ); }
+        try { System.out.println( "   " + "is moving: " + b.continuesToMove() + "   " + b.toString() ); }
         catch (Exception e) { System.out.println( e ); }
         b.newBallPos();
       }
