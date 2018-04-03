@@ -1,0 +1,364 @@
+.                                       
+.                                       
+======================================  
+... Testing Ball class ...              
+======================================  
+TESTING newBallPos()
+   Position: 10.00 , 10.00The ball is not moving!
+   Velocity: 00.90 , 00.90; Position: 20.00 , 20.00
+   Velocity: 00.82 , 00.82; Position: 29.04 , 29.04
+   Velocity: 00.74 , 00.74; Position: 37.22 , 37.22
+   Velocity: 00.67 , 00.67; Position: 44.62 , 44.62
+   Velocity: 00.61 , 00.61; Position: 51.31 , 51.31
+   Velocity: 00.55 , 00.55; Position: 57.36 , 57.36
+   Velocity: 00.49 , 00.49; Position: 62.83 , 62.83
+   Velocity: 00.45 , 00.45; Position: 67.78 , 67.78
+   Velocity: 00.40 , 00.40; Position: 72.25 , 72.25
+
+TESTING getXPosition()
+   x-position: 40.0
+   x-position: 30.0
+   x-position: 20.1
+   x-position: 10.299000000000001
+   x-position: 0.5960100000000015
+
+TESTING getYPosition()
+   y-position: 0.0
+   y-position: 10.0
+   y-position: 19.9
+   y-position: 29.701
+   y-position: 39.40399
+
+TESTING continuesToMove()
+   is moving: false   Position: 05.00 , 15.00The ball is not moving!
+   is moving: true   Velocity: 09.00 , 09.81; Position: 225.00 , 255.00
+   is moving: true   Velocity: 07.36 , 08.03; Position: 404.94 , 451.30
+   is moving: true   Velocity: 06.02 , 06.57; Position: 552.11 , 611.85
+   is moving: true   Velocity: 04.92 , 05.37; Position: 672.49 , 743.17
+   is moving: true   Velocity: 04.03 , 04.39; Position: 770.94 , 850.57
+   is moving: true   Velocity: 03.29 , 03.59; Position: 851.47 , 938.42
+   is moving: true   Velocity: 02.69 , 02.94; Position: 917.33 , 1010.27
+   is moving: true   Velocity: 02.20 , 02.40; Position: 971.20 , 1069.04
+   is moving: true   Velocity: 01.80 , 01.97; Position: 1015.26 , 1117.11
+   is moving: true   Velocity: 01.47 , 01.61; Position: 1051.30 , 1156.42
+   is moving: true   Velocity: 01.21 , 01.31; Position: 1080.78 , 1188.58
+   is moving: true   Velocity: 00.99 , 01.08; Position: 1104.89 , 1214.88
+   is moving: true   Velocity: 00.81 , 00.88; Position: 1124.60 , 1236.39
+   is moving: true   Velocity: 00.66 , 00.72; Position: 1140.73 , 1253.98
+   is moving: true   Velocity: 00.54 , 00.59; Position: 1153.92 , 1268.37
+   is moving: true   Velocity: 00.44 , 00.48; Position: 1164.71 , 1280.14
+   is moving: true   Velocity: 00.36 , 00.39; Position: 1173.54 , 1289.77
+   is moving: true   Velocity: 00.30 , 00.32; Position: 1180.75 , 1297.64
+   is moving: true   Velocity: 00.24 , 00.26; Position: 1186.66 , 1304.08
+   is moving: true   Velocity: 00.20 , 00.22; Position: 1191.49 , 1309.35
+   is moving: true   Velocity: 00.16 , 00.18; Position: 1195.44 , 1313.66
+   is moving: true   Velocity: 00.13 , 00.14; Position: 1198.67 , 1317.18
+   is moving: true   Velocity: 00.11 , 00.12; Position: 1201.31 , 1320.06
+   is moving: true   Velocity: 00.09 , 00.10; Position: 1203.47 , 1322.42
+   is moving: true   Velocity: 00.07 , 00.08; Position: 1205.24 , 1324.35
+   is moving: true   Velocity: 00.06 , 00.06; Position: 1206.68 , 1325.92
+   is moving: false   Position: 1207.86 , 1327.21The ball is not moving!
+   is moving: false   Position: 1208.83 , 1328.27The ball is not moving!
+   is moving: false   Position: 1209.62 , 1329.13The ball is not moving!
+   is moving: false   Position: 1210.27 , 1329.84The ball is not moving!
+   is moving: false   Position: 1210.80 , 1330.41The ball is not moving!
+   is moving: false   Position: 1211.23 , 1330.89The ball is not moving!
+   is moving: false   Position: 1211.58 , 1331.27The ball is not moving!
+   is moving: false   Position: 1211.87 , 1331.59The ball is not moving!
+   is moving: false   Position: 1212.11 , 1331.85The ball is not moving!
+   is moving: false   Position: 1212.30 , 1332.06The ball is not moving!
+   is moving: false   Position: 1212.46 , 1332.23The ball is not moving!
+   is moving: false   Position: 1212.59 , 1332.37The ball is not moving!
+   is moving: false   Position: 1212.70 , 1332.49The ball is not moving!
+.                                       
+.                                       
+.                                       
+.                                       
+======================================  
+... Testing Timer class ...                
+======================================  
+TESTING tick()
+ time slice = 1800 seconds
+    Time: 00:00:00
+    Time: 00:1800:-106200
+    Time: 01:00:00
+    Time: 01:1800:-106200
+    Time: 02:00:00
+    Time: 02:1800:-106200
+    Time: 03:00:00
+    Time: 03:1800:-106200
+    Time: 04:00:00
+    Time: 04:1800:-106200
+
+ time slice = 10 seconds
+    Time: 05:00:00
+    Time: 05:10:-590
+    Time: 05:20:-1180
+    Time: 05:30:-1770
+    Time: 05:40:-2360
+    Time: 05:50:-2950
+    Time: 05:60:-3540
+    Time: 05:70:-4130
+    Time: 05:80:-4720
+    Time: 05:90:-5310
+
+ time slice = 12.3 seconds
+    Time: 05:100:-5900
+    Time: 05:112:-6608
+    Time: 05:124:-7315
+    Time: 05:136:-8023
+    Time: 05:149:-8791
+    Time: 05:161:-9499
+    Time: 05:173:-10206
+    Time: 05:186:-10974
+    Time: 05:198:-11682
+    Time: 05:210:-12389
+
+ time slice = .456 seconds
+    Time: 05:222:-13097
+    Time: 05:223:-13157
+    Time: 05:223:-13156
+    Time: 05:224:-13216
+    Time: 05:224:-13215
+    Time: 05:225:-13275
+    Time: 05:225:-13274
+    Time: 05:226:-13334
+    Time: 05:226:-13333
+    Time: 05:227:-13393
+
+ time slice = -3 seconds
+    Time: 05:227:-13392
+    Time: 05:224:-13215
+    Time: 05:221:-13038
+    Time: 05:218:-12861
+    Time: 05:215:-12684
+    Time: 05:212:-12507
+    Time: 05:209:-12330
+    Time: 05:206:-12153
+    Time: 05:203:-11976
+    Time: 05:200:-11799
+
+TESTING getTotalSeconds()
+   Time slice is incrementing by 10 each time.
+    Time: 05:197:-11622 Total Seconds: 18197.559999999976
+    Time: 05:204:-12035 Total Seconds: 18204.559999999976
+    Time: 05:221:-13038 Total Seconds: 18221.559999999976
+    Time: 05:248:-14631 Total Seconds: 18248.559999999976
+    Time: 05:285:-16814 Total Seconds: 18285.559999999976
+    Time: 05:332:-19587 Total Seconds: 18332.559999999976
+    Time: 05:389:-22950 Total Seconds: 18389.559999999976
+    Time: 05:456:-26903 Total Seconds: 18456.559999999976
+    Time: 05:533:-31446 Total Seconds: 18533.559999999976
+    Time: 05:620:-36579 Total Seconds: 18620.559999999976
+    Time: 05:717:-42302 Total Seconds: 18717.559999999976
+    Time: 05:824:-48615 Total Seconds: 18824.559999999976
+    Time: 05:941:-55518 Total Seconds: 18941.559999999976
+    Time: 05:1068:-63011 Total Seconds: 19068.559999999976
+    Time: 05:1205:-71094 Total Seconds: 19205.559999999976
+    Time: 05:1352:-79767 Total Seconds: 19352.559999999976
+    Time: 05:1509:-89030 Total Seconds: 19509.559999999976
+    Time: 05:1676:-98883 Total Seconds: 19676.559999999976
+    Time: 05:1853:-109326 Total Seconds: 19853.559999999976
+    Time: 05:2040:-120359 Total Seconds: 20040.559999999976
+    Time: 05:2237:-131982 Total Seconds: 20237.559999999976
+    Time: 05:2444:-144195 Total Seconds: 20444.559999999976
+    Time: 05:2661:-156998 Total Seconds: 20661.559999999976
+    Time: 05:2888:-170391 Total Seconds: 20888.559999999976
+    Time: 05:3125:-184374 Total Seconds: 21125.559999999976
+
+TESTING getTimeSlice()
+  Current time slice: 9.0
+.                                       
+.                                       
+======================================  
+... Testing SoccerSim no args...        
+======================================  
+Please enter Speeds and Positions for Ball X and Y and the Time increment
+.                                       
+.                                       
+======================================  
+... Testing SoccerSim one arg...        
+======================================  
+Please enter Speeds and Positions for Ball X and Y and the Time increment
+.                                       
+.                                       
+======================================  
+... Testing SoccerSim two args...       
+======================================  
+Please enter Speeds and Positions for Ball X and Y and the Time increment
+.                                       
+.                                       
+======================================  
+... Testing SoccerSim three args...     
+======================================  
+Please enter Speeds and Positions for Ball X and Y and the Time increment
+.                                       
+.                                       
+======================================  
+... Testing SoccerSim six args...       
+======================================  
+Please enter Speeds and Positions for Ball X and Y and the Time increment
+.                                       
+.                                       
+======================================  
+... Testing SoccerSim out of bounds...  
+======================================  
+INITIAL REPORT
+   Time Slice = 1.0
+   Pole: X-Position = 441.0 Y-Position = 972.0
+
+
+REPORT AT 00:00:00
+   Ball 0: Position: 750.00 , 750.00The ball is not moving!
+
+NO COLLISION POSSIBLE
+.                                       
+.                                       
+======================================  
+... Testing SoccerSim negative time slice...
+======================================  
+INITIAL REPORT
+   Time Slice = -1.0
+   Pole: X-Position = 933.0 Y-Position = 359.0
+
+
+REPORT AT 00:00:00
+   Ball 0: Position: 10.00 , 10.00The ball is not moving!
+
+NO COLLISION POSSIBLE
+.                                       
+.                                       
+======================================  
+... Testing SoccerSim time slice too large...
+======================================  
+INITIAL REPORT
+   Time Slice = 1800.1
+   Pole: X-Position = 644.0 Y-Position = 32.0
+
+
+REPORT AT 00:00:00
+   Ball 0: Position: 10.00 , 10.00The ball is not moving!
+
+NO COLLISION POSSIBLE
+.                                       
+.                                       
+======================================  
+... Testing SoccerSim time slice value of zero...
+======================================  
+INITIAL REPORT
+   Time Slice = 0.0
+   Pole: X-Position = 397.0 Y-Position = 574.0
+
+
+REPORT AT 00:00:00
+   Ball 0: Position: 10.00 , 10.00The ball is not moving!
+
+NO COLLISION POSSIBLE
+.                                       
+.                                       
+======================================  
+... Testing SoccerSim check for collision...
+======================================  
+INITIAL REPORT
+   Time Slice = 1.0
+   Pole: X-Position = 301.0 Y-Position = 333.0
+
+
+REPORT AT 00:00:00
+   Ball 0: Position: 10.00 , 10.00The ball is not moving!
+   Ball 1: Position: 20.00 , 20.00The ball is not moving!
+
+NO COLLISION POSSIBLE
+.                                       
+.                                       
+======================================  
+... Testing SoccerSim valid ball should come to rest...
+======================================  
+INITIAL REPORT
+   Time Slice = 1.0
+   Pole: X-Position = 478.0 Y-Position = 55.0
+
+
+REPORT AT 00:00:00
+   Ball 0: Position: 10.00 , 10.00The ball is not moving!
+
+NO COLLISION POSSIBLE
+.                                       
+.                                       
+======================================  
+... Testing SoccerSim valid ball should go out of bounds...
+======================================  
+INITIAL REPORT
+   Time Slice = 1.0
+   Pole: X-Position = 704.0 Y-Position = 615.0
+
+
+REPORT AT 00:00:00
+   Ball 0: Position: 10.00 , 10.00The ball is not moving!
+
+NO COLLISION POSSIBLE
+.                                       
+.                                       
+======================================  
+... Testing SoccerSim valid ball set six balls subsecond time slice...
+======================================  
+INITIAL REPORT
+   Time Slice = 0.1
+   Pole: X-Position = 474.0 Y-Position = 885.0
+
+
+REPORT AT 00:00:00
+   Ball 0: Position: 200.00 , 200.00The ball is not moving!
+   Ball 1: Position: 100.00 , 100.00The ball is not moving!
+   Ball 2: Position: 150.00 , 150.00The ball is not moving!
+   Ball 3: Position: 175.00 , 175.00The ball is not moving!
+   Ball 4: Position: 20.00 , 20.00The ball is not moving!
+   Ball 5: Position: 50.00 , 50.00The ball is not moving!
+
+NO COLLISION POSSIBLE
+.                                       
+.                                       
+======================================  
+... Testing SoccerSim valid ball set five balls 1.234 second time slice...
+======================================  
+INITIAL REPORT
+   Time Slice = 1.234
+   Pole: X-Position = 424.0 Y-Position = 884.0
+
+
+REPORT AT 00:00:00
+   Ball 0: Position: 200.00 , 200.00The ball is not moving!
+   Ball 1: Position: 100.00 , 100.00The ball is not moving!
+   Ball 2: Position: 175.00 , 175.00The ball is not moving!
+   Ball 3: Position: 20.00 , 20.00The ball is not moving!
+   Ball 4: Position: 50.00 , 50.00The ball is not moving!
+
+NO COLLISION POSSIBLE
+.                                       
+.                                       
+======================================  
+... Testing SoccerSim valid ball set ten balls 10 second time slice...
+======================================  
+INITIAL REPORT
+   Time Slice = 10.0
+   Pole: X-Position = 805.0 Y-Position = 562.0
+
+
+REPORT AT 00:00:00
+   Ball 0: Position: 150.00 , 150.00The ball is not moving!
+   Ball 1: Position: 100.00 , 100.00The ball is not moving!
+   Ball 2: Position: 200.00 , 200.00The ball is not moving!
+   Ball 3: Position: 250.00 , 250.00The ball is not moving!
+   Ball 4: Position: 20.00 , 20.00The ball is not moving!
+   Ball 5: Position: 50.00 , 50.00The ball is not moving!
+   Ball 6: Position: -100.00 , -100.00The ball is not moving!
+   Ball 7: Position: -200.00 , -200.00The ball is not moving!
+   Ball 8: Position: -110.00 , -110.00The ball is not moving!
+   Ball 9: Position: 01.00 , 01.00The ball is not moving!
+
+NO COLLISION POSSIBLE
+.                                       
+.                                       
+======================================  
+... End of SoccerSim Testing...         
+======================================  
