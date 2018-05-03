@@ -1,3 +1,4 @@
+
 /** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
  * File name  :  Tuple.java
  * Purpose    :  Program to represent a tuple of integers, indexed from zero
@@ -79,9 +80,10 @@ public class Tuple {
   /**
    * Returns whether the tuple is impossible.
    *
-   * @return whether the tuple is imposible
+   * @return whether the tuple is impossible
    */
    public boolean isImpossible() {
+      //return this.equals( IMPOSSIBLE );
       return this == IMPOSSIBLE;
    }
 
@@ -124,11 +126,12 @@ public class Tuple {
    * @return the total of the elements of this tuple
    */
    public int total() {
-       int sum = 0;
-       for (int i = 0; i < length(); i++) {
-           sum = sum + getElement(i);
-       }
-       return sum;
+      int sum = 0;
+      for( int i = 0; i < length(); i++ ) {
+         sum = sum + getElement( i );
+      }
+
+      return sum;
    }
 
   /**
@@ -138,18 +141,18 @@ public class Tuple {
    *
    * @return the element-wise sum of this and t
    */
-   public Tuple add(Tuple t) {
+   public Tuple add( Tuple t ) {
 
-       if (length() != t.length()) {
-           throw new IllegalArgumentException();
-       }
+      if( length() != t.length()) {
+         throw new IllegalArgumentException();
+      }
 
-       Tuple sum = new Tuple(length());
-       for (int i = 0; i < length(); i++) {
-           sum.setElement(i, getElement(i) + t.getElement(i));
-       }
+      Tuple sum = new Tuple(length());
+      for( int i = 0; i < length(); i++ ) {
+         sum.setElement(i, getElement( i ) + t.getElement( i ) );
+      }
 
-       return sum;
+      return sum;
    }
 
   /**
@@ -160,18 +163,18 @@ public class Tuple {
    * @see java.lang.Object#equals(java.lang.Object)
    */
    @Override
-   public boolean equals(Object t) {
-       if ((t == null) || !(t instanceof Tuple) || (length() != ((Tuple)t).length())) {
-           return false;
-       }
+   public boolean equals( Object t ) {
+      if( (t == null) || (!(t instanceof Tuple)) || (length() != ((Tuple)t).length())       ) {
+         return false;
+      }
 
-       for (int i = 0; i < length(); i++) {
-           if (getElement(i) != ((Tuple)t).getElement(i)) {
-               return false;
-           }
-       }
+      for( int i = 0; i < length(); i++ ) {
+         if( getElement( i ) != ((Tuple)t).getElement( i ) ) {
+            return false;
+         }
+      }
 
-       return true;
+      return true;
    }
 
   /**
@@ -182,12 +185,14 @@ public class Tuple {
    */
    @Override
    public int hashCode() {
-       int product = 0;
-       for (int i = 0; i < length(); i++) {
-           product = product * getElement(i);
+      int product = 1;
+       if( this.isImpossible() ) {
+          return 0;
        }
-
-       return (product >= 0) ? product : -product;
+      for( int i = 0; i < length(); i++ ) {
+         product = product * getElement( i );
+      }
+      return (product >= 0) ? product : -product;
    }
 
   /**
@@ -196,18 +201,17 @@ public class Tuple {
    * @see java.lang.Object#toString()
    */
    @Override
+   public String toString() {
+      if( isImpossible()) {
+         return "Impossible tuple";
+      }
 
-       public String toString() {
-           if (isImpossible()) {
-               return "Impossible tuple";
-           }
-
-           String result = "<";
-           for (int i = 0; i < length(); i++) {
-               result += (i > 0 ? "," : "") + data[i];
-           }
-           return result + ">";
-       }
+      String result = "<";
+      for( int i = 0; i < length(); i++ ) {
+         result += (i > 0 ? "," : "") + data[i];
+      }
+      return result + ">";
+   }
 
   /**
    * Checks the validity of a passed index on this Tuple
@@ -224,14 +228,14 @@ public class Tuple {
    *
    * @see java.lang.Object#toString()
    */
-   private void checkIndex(int i) {
-       if (i < 0) {
-           throw new IllegalArgumentException();
-       }
+   private void checkIndex( int i ) throws IllegalArgumentException {
+      if( i < 0 ) {
+         throw new IllegalArgumentException();
+      }
 
-       if (i >= length()) {
-           throw new IllegalArgumentException();
-       }
+      if( i >= length() ) {
+         throw new IllegalArgumentException();
+      }
    }
 
 }
